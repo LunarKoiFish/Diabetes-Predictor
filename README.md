@@ -98,6 +98,7 @@ HighBP	-0.397	0.075	0.323
 BMI	-0.022	-0.004	0.026
 HvyAlcoholConsump	0.452	-0.012	-0.440
 GenHlth	-0.167	-0.094	0.261
+
 ⚙️ Hyperparameter Optimization
 ---
 Tested C values: [1e-7, 1e-6, 1e-5, 1e-4, 0.001, 0.01, 0.1, 1, 10, 100, 1000]
@@ -121,7 +122,9 @@ Real-time prediction results displayed after submission
 Reset Form button to clear all inputs
 
 Screenshot of Form UI:
-<img width="600" alt="Diabetes Web App Form" src="https://user-images.githubusercontent.com/yourusername/screenshots/diabetes_form.png">
+
+<img width="680" height="859" alt="Screenshot_4" src="https://github.com/user-attachments/assets/73812909-4f11-4e09-b6d0-92bc820f2191" />
+
 
 Usage Example:
 
