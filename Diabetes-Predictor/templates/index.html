@@ -46,14 +46,15 @@
                     {% if details.type == "binary" %}
                         <select name="{{ col }}" required class="form-control">
                             <option value="" {% if not request.form.get(col) %}selected{% endif %} disabled>Please select</option>
-                            <option value="0" {% if request.form.get(col) = '0' %}selected{% endif %}>No</option>
-                            <option value="1" {% if request.form.get(col) = '1' %}selected{% endif %}>Yes</option>
+                            <option value="0" {% if request.form.get(col) == '0' %}selected{% endif %}>No</option>
+                            <option value="1" {% if request.form.get(col) == '1' %}selected{% endif %}>Yes</option>
                         </select>
 
                     {% elif details.type == "scale" %}
                         <select name="{{ col }}" class="form-control" required>
+                            <option value="" selected disabled>Please select</option>
                             {% for key, value in details.options.items() %}
-                                <option value="{{ key }}" {% if request.form.get(col, key|string) = key|string %}selected{% endif %}>{{ value }}</option>
+                                <<option value="{{ key }}" {% if request.form.get(col) == key|string %}selected{% endif %}>{{ value }}</option>
                             {% endfor %}
                         </select>
 
@@ -69,7 +70,8 @@
             {% endfor %}
 
             <button type="submit" class="btn btn-primary btn-block">Predict</button>
-            <button type='button' class='btn btn-secondary btn-block' onclick='window.location.href="{{ url_for("index") }}"'>Reset Form</button>
+            <button type="button" class="btn btn-secondary btn-block" onclick="resetForm()">Reset Form</button>
+
 
 
 
@@ -82,14 +84,22 @@
         {% endif %}
     </div>
 
+ 
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script>
-        function resetForm() {
-            document.getElementById("diabetes-form").reset();
-        }
+    function resetForm() {
+        const form = document.getElementById("diabetes-form");
+        form.reset();
+
+        const selects = form.querySelectorAll("select");
+        selects.forEach(sel => sel.selectedIndex = 0);
+    }
     </script>
+
+
 </body>
 </html>
