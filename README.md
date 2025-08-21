@@ -1,6 +1,7 @@
 🩺 Diabetes Predictor App
+---
 📌 Overview
-
+---
 This project predicts diabetes risk using logistic regression on a dataset of health indicators. The dataset includes over 250,000 records with demographic and health-related features.
 
 The project has two main components:
@@ -10,7 +11,7 @@ Data Analysis & Modeling – Logistic regression with feature scaling and hyperp
 Flask Web Application – An interactive web interface for users to input health data and receive real-time diabetes risk predictions.
 
 🎯 Objectives
-
+---
 Build a logistic regression model to classify diabetes status (No diabetes, Pre-diabetic, Diabetic).
 
 Evaluate model performance using accuracy, precision, recall, and confusion matrix.
@@ -22,7 +23,7 @@ Deploy a Flask web app for interactive user input and prediction.
 Provide a user-friendly interface with Bootstrap styling and real-time feedback.
 
 🛠️ Tools & Technologies
-
+---
 Python – data processing and modeling
 
 Flask – web application framework
@@ -40,29 +41,29 @@ joblib – saving and loading models
 GitHub – version control and project documentation
 
 📁 Dataset
-
+---
 Source: diabetes_health_indicators.db (SQLite database)
 
 Key Features Used:
 
-HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack
+* HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack
 
-PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost
+* PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost
 
-GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income
+* GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income
 
 Target Variable:
 
-Diabetes_012
+* Diabetes_012
 
-0: No diabetes
+* 0: No diabetes
 
-1: Pre-diabetic
+* 1: Pre-diabetic
 
-2: Diabetic
+* 2: Diabetic
 
 🧹 Data Preparation Steps
-
+---
 Data Loading: Queried SQLite database using SQLAlchemy and loaded into a pandas DataFrame.
 
 Feature Separation:
@@ -76,7 +77,7 @@ Train-Test Split: Used train_test_split with random_state=42.
 Scaling: Applied StandardScaler to improve model convergence.
 
 📊 Model & Evaluation
-
+---
 Logistic Regression Model (Scaled Features):
 
 Confusion Matrix:
@@ -98,7 +99,7 @@ BMI	-0.022	-0.004	0.026
 HvyAlcoholConsump	0.452	-0.012	-0.440
 GenHlth	-0.167	-0.094	0.261
 ⚙️ Hyperparameter Optimization
-
+---
 Tested C values: [1e-7, 1e-6, 1e-5, 1e-4, 0.001, 0.01, 0.1, 1, 10, 100, 1000]
 
 Evaluated accuracy, precision, recall for each model version.
@@ -106,7 +107,7 @@ Evaluated accuracy, precision, recall for each model version.
 Stored results in data_model_optimization_results.
 
 💻 Flask Web App
-
+---
 The web app allows users to input health data and receive a diabetes risk prediction:
 
 Responsive design with Bootstrap
@@ -134,7 +135,7 @@ Open your browser at http://127.0.0.1:5000/
 Enter health details and submit to get prediction
 
 💾 Saving the Model
-
+---
 Final model and scaler saved with joblib:
 
 joblib.dump((logi_model, scaler), 'Resources/diabetes_logi_regress_model.pkl')
@@ -147,7 +148,7 @@ new_data_scaled = scaler.transform(user_input)
 prediction = model.predict(new_data_scaled)
 
 🔗 Project Files
-
+---
 Resources/diabetes_health_indicators.db – Dataset
 
 Resources/diabetes_logi_regress_model.pkl – Trained model & scaler
@@ -161,12 +162,13 @@ templates/index.html – Form UI with Bootstrap
 data_model_optimization_results.csv – Hyperparameter optimization results
 
 📜 License
-
-This project is licensed under the MIT License. Use or adapt with proper attribution.
+---
+This project is licensed under the MIT License. Feel free to use or adapt the work with proper attribution.
 
 📬 Contact
+---
+For questions or collaborations:
 
-📧 [koifish.analytics@gmail.com
-]
+📧 koifish.analytics@gmail.com
 
-💼 LinkedIn
+💼 [LinkedIn](https://www.linkedin.com/in/davidjian00/)
