@@ -126,16 +126,15 @@ Screenshot of Form UI:
 <img width="680" height="859" alt="Screenshot_4" src="https://github.com/user-attachments/assets/73812909-4f11-4e09-b6d0-92bc820f2191" />
 
 
-Usage Example:
+# Intalling/Running the Flask app instructions
 
-# Run the Flask app
-export FLASK_APP=app.py
-flask run
-
-
-Open your browser at http://127.0.0.1:5000/
-
-Enter health details and submit to get prediction
+* Install Diabetes-Predictor folder onto computer
+* Install Python if not installed before
+* pip install dependecies using requirements.txt in bash
+* Run flask app
+* Open your browser at http://127.0.0.1:5000/\
+* Enter health details and submit to get prediction
+* Reset form if needed
 
 💾 Saving the Model
 ---
